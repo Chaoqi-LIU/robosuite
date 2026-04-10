@@ -20,6 +20,27 @@ from robosuite.controllers import (
     ALL_COMPOSITE_CONTROLLERS,
     load_composite_controller_config,
 )
+
+# Compatibility shim for robosuite 1.4.0 API used by libero.
+# In 1.4.0, load_controller_config returned a flat part-controller dict.
+# In 1.5.2, the env expects a composite controller config:
+#   {"type": "BASIC", "body_parts": {"arms": {"right": <part_config>}}}
+# We wrap the part config so libero's call sites work unchanged.
+def load_controller_config(custom_fpath=None, default_controller=None):
+    part_cfg = load_part_controller_config(
+        custom_fpath=custom_fpath, default_controller=default_controller
+    )
+    # body_parts uses flattened arm keys (not nested under "arms") to match
+    # what load_composite_controller_config returns after its flattening step.
+    part_cfg.setdefault("gripper", {"type": "GRIP"})
+    return {
+        "type": "BASIC",
+        "body_parts": {
+            "right": part_cfg,
+        },
+    }
+
+ALL_CONTROLLERS = ALL_PART_CONTROLLERS
 from robosuite.robots import ALL_ROBOTS
 from robosuite.models.grippers import ALL_GRIPPERS
 from robosuite.utils.log_utils import ROBOSUITE_DEFAULT_LOGGER
