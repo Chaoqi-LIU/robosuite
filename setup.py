@@ -12,7 +12,7 @@ lines = [x for x in lines if ".png" not in x]
 long_description = "".join(lines)
 
 setup(
-    name="robosuite",
+    name="praxis-robosuite",
     packages=[package for package in find_packages() if package.startswith("robosuite")],
     install_requires=[
         "numpy>=1.13.3",
@@ -37,8 +37,14 @@ setup(
     python_requires=">=3",
     description="robosuite: A Modular Simulation Framework and Benchmark for Robot Learning",
     author="Yuke Zhu",
-    url="https://github.com/ARISE-Initiative/robosuite",
+    url="https://github.com/Chaoqi-LIU/robosuite",
     author_email="yukez@cs.utexas.edu",
+    maintainer="Chaoqi Liu",
+    maintainer_email="liuchaoqi730@gmail.com",
+    project_urls={
+        "Source": "https://github.com/Chaoqi-LIU/robosuite",
+        "Maintainer Website": "https://chaoqi-liu.com",
+    },
     version="1.5.2",
     long_description=long_description,
     long_description_content_type="text/markdown",
