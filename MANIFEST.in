@@ -1,4 +1,16 @@
 recursive-include robosuite/controllers/config/ *
 recursive-include robosuite/demos *
-recursive-include robosuite/models/assets/ *
+include robosuite/models/assets/base.xml
+recursive-include robosuite/models/assets/arenas *
+recursive-include robosuite/models/assets/bases *.xml
+recursive-include robosuite/models/assets/bases/meshes/omron_mobile_base *
+recursive-include robosuite/models/assets/bases/meshes/rethink_minimal_mount *
+recursive-include robosuite/models/assets/bases/meshes/rethink_mount *
+include robosuite/models/assets/grippers/null_gripper.xml
+include robosuite/models/assets/grippers/panda_gripper.xml
+recursive-include robosuite/models/assets/grippers/meshes/panda_gripper *
+recursive-include robosuite/models/assets/objects *
+recursive-include robosuite/models/assets/robots/panda *
+recursive-include robosuite/models/assets/textures *
+prune robosuite/models/assets/bullet_data
 recursive-include robosuite/scripts *
