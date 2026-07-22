@@ -8,8 +8,15 @@ recursive-include robosuite/models/assets/bases/meshes/rethink_minimal_mount *
 recursive-include robosuite/models/assets/bases/meshes/rethink_mount *
 include robosuite/models/assets/grippers/null_gripper.xml
 include robosuite/models/assets/grippers/panda_gripper.xml
+include robosuite/models/assets/grippers/fourier_left_hand.xml
+include robosuite/models/assets/grippers/fourier_right_hand.xml
+include robosuite/models/assets/grippers/inspire_left_hand.xml
+include robosuite/models/assets/grippers/inspire_right_hand.xml
+recursive-include robosuite/models/assets/grippers/meshes/fourier_hands *
+recursive-include robosuite/models/assets/grippers/meshes/inspire_hands *
 recursive-include robosuite/models/assets/grippers/meshes/panda_gripper *
 recursive-include robosuite/models/assets/objects *
+recursive-include robosuite/models/assets/robots/gr1 *
 recursive-include robosuite/models/assets/robots/panda *
 recursive-include robosuite/models/assets/textures *
 prune robosuite/models/assets/bullet_data
