@@ -45,7 +45,7 @@ setup(
         "Source": "https://github.com/Chaoqi-LIU/robosuite",
         "Maintainer Website": "https://chaoqi-liu.com",
     },
-    version="1.5.2",
+    version="1.5.2.post1",
     long_description=long_description,
     long_description_content_type="text/markdown",
 )
